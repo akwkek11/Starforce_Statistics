@@ -1,0 +1,40 @@
+
+Result
+--------------------------------------------------------------------
+Item Level : 160
+Sample size : 25000 * 4 = 100000
+Start Starforce : 0, End Starforce : 22
+Original item price : 100000000
+Enable Saleevent : no
+Enable event1516 : no
+MVP Rank : Bronze
+PC room : no
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+Case 1. prevention : off, starcatch : off
+Max meso : 231391940600, Avg meso : 23942392500, Min meso : 596677000
+Max destroy : 121, Avg destroy : 11, Min destroy : 0
+Max attempts : 8743, Avg attempts : 968, Min attempts : 27
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+Case 2. prevention : off, starcatch : on
+Max meso : 186611303000, Avg meso : 17687081200, Min meso : 540993100
+Max destroy : 97, Avg destroy : 8, Min destroy : 0
+Max attempts : 7225, Avg attempts : 670, Min attempts : 28
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+Case 3. prevention : on, starcatch : off
+Max meso : 286458574300, Avg meso : 32030843200, Min meso : 632363400
+Max destroy : 35, Avg destroy : 3, Min destroy : 0
+Max attempts : 5298, Avg attempts : 638, Min attempts : 27
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+Case 4. prevention : on, starcatch : on
+Max meso : 224168643800, Avg meso : 23994439400, Min meso : 601015900
+Max destroy : 30, Avg destroy : 2, Min destroy : 0
+Max attempts : 3879, Avg attempts : 477, Min attempts : 25
+--------------------------------------------------------------------
