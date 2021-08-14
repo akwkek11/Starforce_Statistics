@@ -1,4 +1,4 @@
-from multiprocessing import Array, Manager, Process, Value, current_process, cpu_count
+from multiprocessing import Array, Manager, Process, current_process, cpu_count
 from pytz import timezone, utc
 from typing import List
 
@@ -20,6 +20,7 @@ destroyrate = None
 mvpdiscount = None
 rankdown = None
 selecttable = None
+table140 = None
 table150 = None
 table160 = None
 table200 = None
@@ -210,15 +211,17 @@ def simulation() -> None:
 
         print(  "\nSelect item information you want to check\n"
                 "---------------------------\n"
-                "1 : 150, 2 : 160, 3 : 200")
+                "1 : 140, 2 : 150, 3 : 160, 4 : 200")
         
         try:
             select = int(input())
 
-            if select >= 1 and select <= 3:
+            if select >= 1 and select <= 4:
                 if select == 1:
-                    selecttable = table150[:]
+                    selecttable = table140[:]
                 elif select == 2:
+                    selecttable = table150[:]
+                elif select == 3:
                     selecttable = table160[:]
                 else:
                     selecttable = table200[:]
@@ -363,7 +366,7 @@ def cost_check():
 
     print(  "\nSelect item information you want to check\n"
             "---------------------------\n"
-            "1 : 150, 2 : 160, 3 : 200")
+            "1 : 140, 2 : 150, 3 : 160, 4 : 200")
 
     while True:
         try:
@@ -372,8 +375,10 @@ def cost_check():
             
             if select >= 1 and select <= 3:
                 if select == 1:
-                    looktable = table150[:]
+                    looktable = table140[:]
                 elif select == 2:
+                    looktable = table150[:]
+                elif select == 3:
                     looktable = table160[:]
                 else:
                     looktable = table200[:]
@@ -391,6 +396,7 @@ def cost_check():
         
         except Exception as e:
             print(f"\nException Alerted. {e}\n")
+            break
 
 def exit_func():
     sys.exit("Program Terminated Successfully")
@@ -419,9 +425,12 @@ def home():
 
 
 def main():
+    global table140
     global table150
     global table160
     global table200
+
+    table140 = []
     table150 = []
     table160 = []
     table200 = []
@@ -451,7 +460,7 @@ def main():
     global msg
     global mvp
     global resmsg
-    level = ['150', '160', '200']
+    level = ['140', '150', '160', '200']
     msg = ['no', 'yes']
     mvp = ['Silver', 'Gold', 'Diamond', 'Red', 'Bronze']
     resmsg = ['prevention : off, starcatch : off',
@@ -460,21 +469,25 @@ def main():
               'prevention : on, starcatch : on'   ]
     
     for i in range(0, 25):
-        a = 150
-        b = 160
-        c = 200
+        a = 140
+        b = 150
+        c = 160
+        d = 200
         if i >= 0 and i <= 9:
-            table150.append(round(1000+math.pow(a,3)*(i+1)/25, -2))
-            table160.append(round(1000+math.pow(b,3)*(i+1)/25, -2))
-            table200.append(round(1000+math.pow(c,3)*(i+1)/25, -2))
+            table140.append(round(1000+math.pow(a,3)*(i+1)/25, -2))
+            table150.append(round(1000+math.pow(b,3)*(i+1)/25, -2))
+            table160.append(round(1000+math.pow(c,3)*(i+1)/25, -2))
+            table200.append(round(1000+math.pow(d,3)*(i+1)/25, -2))
         elif i >= 10 and i <= 14:
-            table150.append(round(1000+math.pow(a,3)*math.pow((i+1), 2.7)/400, -2))
-            table160.append(round(1000+math.pow(b,3)*math.pow((i+1), 2.7)/400, -2))
-            table200.append(round(1000+math.pow(c,3)*math.pow((i+1), 2.7)/400, -2))
+            table140.append(round(1000+math.pow(a,3)*math.pow((i+1), 2.7)/400, -2))
+            table150.append(round(1000+math.pow(b,3)*math.pow((i+1), 2.7)/400, -2))
+            table160.append(round(1000+math.pow(c,3)*math.pow((i+1), 2.7)/400, -2))
+            table200.append(round(1000+math.pow(d,3)*math.pow((i+1), 2.7)/400, -2))
         else:
-            table150.append(round(1000+math.pow(a,3)*math.pow((i+1), 2.7)/200, -2))
-            table160.append(round(1000+math.pow(b,3)*math.pow((i+1), 2.7)/200, -2))
-            table200.append(round(1000+math.pow(c,3)*math.pow((i+1), 2.7)/200, -2))
+            table140.append(round(1000+math.pow(a,3)*math.pow((i+1), 2.7)/400, -2))
+            table150.append(round(1000+math.pow(b,3)*math.pow((i+1), 2.7)/200, -2))
+            table160.append(round(1000+math.pow(c,3)*math.pow((i+1), 2.7)/200, -2))
+            table200.append(round(1000+math.pow(d,3)*math.pow((i+1), 2.7)/200, -2))
 
     home()
 
