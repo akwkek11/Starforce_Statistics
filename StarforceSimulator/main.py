@@ -484,7 +484,7 @@ def main():
             table160.append(round(1000+math.pow(c,3)*math.pow((i+1), 2.7)/400, -2))
             table200.append(round(1000+math.pow(d,3)*math.pow((i+1), 2.7)/400, -2))
         else:
-            table140.append(round(1000+math.pow(a,3)*math.pow((i+1), 2.7)/400, -2))
+            table140.append(round(1000+math.pow(a,3)*math.pow((i+1), 2.7)/200, -2))
             table150.append(round(1000+math.pow(b,3)*math.pow((i+1), 2.7)/200, -2))
             table160.append(round(1000+math.pow(c,3)*math.pow((i+1), 2.7)/200, -2))
             table200.append(round(1000+math.pow(d,3)*math.pow((i+1), 2.7)/200, -2))
